@@ -74,7 +74,33 @@
     <meta name="og:region" content="ID" />
     <meta name="og:postal-code" content="40261" />
     <meta name="og:country-name" content="Indonesia" />
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-621984060"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
 
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'AW-621984060');
+    </script>
+    <script>
+        gtag('event', 'conversion', {
+            'send_to': 'AW-621984060/hx6OCNW32IEZELzyyqgC'
+        });
+    </script>
+    <script>
+        gtag('event', 'conversion', {
+            'send_to': 'AW-621984060/GP2YCNi32IEZELzyyqgC'
+        });
+    </script>
+    <script>
+        gtag('event', 'conversion', {
+            'send_to': 'AW-621984060/TIryCNu32IEZELzyyqgC'
+        });
+    </script>
 </head>
 
 <body class="stretched">
