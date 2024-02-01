@@ -6,6 +6,7 @@
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
     <meta http-equiv="x-ua-compatible" content="IE=edge">
     <meta name="author" content="Boxity Central Indonesia">
+    <meta name="google-site-verification" content="0cZjGwY5g597nKaz-od_uHdkGAZWABWJDdT6zpTkx0k" />
     <meta name="description"
         content="Investasi Emas Mudah dan Terpercaya Bersama Keemasan yang telah berpengalaman selama lebih dari 10 tahun.">
     <meta name="keyword"
