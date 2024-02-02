@@ -16,14 +16,18 @@
                                 @elseif($sponsor_peringkat == 'SENIOR FARMERS')
                                 color:#FEC152; font-weight:bolder;
                                 @else
-                                color:#FEC152;font-weight:bold;color: #FEC152;background-color: #431541;padding: 8px;border-radius: .25rem; @endif"><i
-                                        class="bi bi-patch-check-fill"
-                                        style="@if ($sponsor_peringkat == 'JUNIOR FARMERS') color:#431541;
-@elseif($sponsor_peringkat == 'SENIOR FARMERS')
-color:#FEC152;
+                                color:#FEC152;font-weight:bold;color: #FEC152;background-color: #431541;padding: 8px;border-radius: .25rem; @endif">
+                                    @if ($sponsor_peringkat == 'JUNIOR FARMERS' || $sponsor_peringkat == 'SENIOR FARMERS')
+                                        <i class="bi bi-patch-check-fill"
+                                            style="@if ($sponsor_peringkat == 'JUNIOR FARMERS') color:#431541;
 @else
-color: #FEC152; @endif"></i>
-                                    {{ $sponsor_peringkat }}</span>
+color:#FEC152; @endif"></i>
+                                    @elseif($sponsor_peringkat == 'MASTER FARMERS')
+                                        <img src="{!! asset('keemasan/peringkat/master.png') !!}" style="width:25px; margin-right:3px;"
+                                            alt="Master Farmers - {{ $sponsor_nama }}">
+                                    @endif
+                                    {{ $sponsor_peringkat }}
+                                </span>
                                 <div class="action-buttons" style="margin: 20px 0;">
                                     <a href="https://api.whatsapp.com/send?phone={{ $sponsor_wa }}&amp;text=Halo%20{{ $sponsor_nama }}%20Saya%20tertarik%20dan%20ingin%20bergabung%20dengan%20{{ $sc_name }}%20mohon%20infonya"
                                         target="_blank" class="btn discussion my-1"
