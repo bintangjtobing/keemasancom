@@ -8,12 +8,22 @@
                     <div class="row">
                         <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1">
                             <div class="profile-card text-center">
-                                <img src="{{ $sponsor_fotone != 'no-images.png' ? asset($sponsor_fotone) : 'https://www.keemasan.com/no-images.png' }}"
+                                <img src="{{ $sponsor_fotone != 'no-images.png' ? asset($sponsor_fotone) : 'https://res.cloudinary.com/boxity-id/image/upload/v1706840685/no-images_oxu8sh.png' }}"
                                     alt="User image - Keemasan .com" class="profile-image">
                                 <h3 style="margin-top:10px; margin-bottom: 5px;">{{ $sponsor_nama }}</h3>
                                 <span class="title"
-                                    style="font-style: italic;
-                                    color: #888;">{{ $sponsor_peringkat }}</span>
+                                    style="@if ($sponsor_peringkat == 'JUNIOR FARMERS') color:#431541; font-weight:bolder;
+                                @elseif($sponsor_peringkat == 'SENIOR FARMERS')
+                                color:#FEC152; font-weight:bolder;
+                                @else
+                                color:#FEC152;font-weight:bold;color: #FEC152;background-color: #431541;padding: 8px;border-radius: .25rem; @endif"><i
+                                        class="bi bi-patch-check-fill"
+                                        style="@if ($sponsor_peringkat == 'JUNIOR FARMERS') color:#431541;
+@elseif($sponsor_peringkat == 'SENIOR FARMERS')
+color:#FEC152;
+@else
+color: #FEC152; @endif"></i>
+                                    {{ $sponsor_peringkat }}</span>
                                 <div class="action-buttons" style="margin: 20px 0;">
                                     <a href="https://api.whatsapp.com/send?phone={{ $sponsor_wa }}&amp;text=Halo%20{{ $sponsor_nama }}%20Saya%20tertarik%20dan%20ingin%20bergabung%20dengan%20{{ $sc_name }}%20mohon%20infonya"
                                         target="_blank" class="btn discussion my-1"
@@ -49,7 +59,7 @@
                                     emas di platform keemasan, hanya dengan Rp 300.000 anda sudah memiliki
                                     kavling kebun emas dan dapat disewakan kepada 15 petani dan dapatkan bagi hasil
                                     panen hingga 50% sampai 99 kali masa panen</p>
-                                <h2 style="color: #333;  font-size: 1.5em;  margin-bottom: 5px;">DAPATKAN VIDEO KEEMASAN
+                                <h2 style="color: #333;  font-size: 1.5em;  margin-bottom: 5px;">PELAJARI VIDEO KEEMASAN
                                 </h2>
                                 <div class="row">
                                     <div class="col-lg-6 col-md-6 my-1">
