@@ -23,7 +23,8 @@
 @else
 color:#FEC152; @endif"></i>
                                     @elseif($sponsor_peringkat == 'MASTER FARMERS')
-                                        <img src="{!! asset('keemasan/peringkat/master.png') !!}" style="width:25px; margin-right:3px;"
+                                        <img src="https://res.cloudinary.com/boxity-id/image/upload/v1706843723/master_s0whtj.png"
+                                            style="width:25px; margin-right:3px;"
                                             alt="Master Farmers - {{ $sponsor_nama }}">
                                     @endif
                                     {{ $sponsor_peringkat }}
