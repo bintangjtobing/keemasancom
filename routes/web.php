@@ -10,6 +10,7 @@ use Spatie\Sitemap\Tags\Url;
 use Illuminate\Support\Facades\Http;
 
 Route::get('/', [referralController::class, 'index']);
+Route::get('/{username}', [referralController::class, 'userFind']);
 Route::get('/web-config', [ReferralController::class, 'webConfig']);
 Route::get('/list-social', [ReferralController::class, 'listSocial']);
 Route::get('/data-referral/{refid}', [ReferralController::class, 'dataReferral']);

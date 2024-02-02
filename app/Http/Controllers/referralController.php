@@ -67,7 +67,34 @@ class referralController extends Controller
             ]);
         }
     }
+    public function userFind($username)
+    {
+        $sponsor = Member::where('mb_username', $username)->first();
+        $config = DB::table('tbl_web_config')->first();
+        if (!$sponsor) {
+            return response()->json(['message' => 'Sponsor not found'], 404);
+        }
 
+        $bank = Bank::find($sponsor->bk_id);
+        $prkt = Peringkat::find($sponsor->idperingkat);
+
+        $awalan = substr($sponsor->mb_telpon, 0, 3);
+        $awalane = str_replace('0', '62', $awalan);
+        $sponsor_wa = str_replace($awalan, $awalane, $sponsor->mb_telpon);
+        $sponsor_fotone = !empty($sponsor->mb_foto) ? "https://keemasan.id/system/images/member/" . $sponsor->mb_foto : "no-images.png";
+
+        return view('home.ref', [
+            'sponsor_id' => $sponsor->MID,
+            'sponsor_ky_id' => $sponsor->ky_id,
+            'sponsor_wa' => $sponsor_wa,
+            'sponsor_fotone' => $sponsor_fotone,
+            'sponsor_peringkat' => $prkt ? $prkt->peringkat : "",
+            'sponsor_bank' => $bank ? $bank->bk_bank : null,
+            'sponsor_nama' => $sponsor->mb_nama,
+            'sponsor_username' => $sponsor->mb_username,
+            'sc_name' => $config->sc_name,
+        ]);
+    }
     private function fetchSponsorData($refid)
     {
         $sponsor = Member::inRandomOrder()->whereIn('idperingkat',  [4, 5, 6])->first();
