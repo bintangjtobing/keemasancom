@@ -97,7 +97,7 @@ class referralController extends Controller
     }
     private function fetchSponsorData($refid)
     {
-        $sponsor = Member::inRandomOrder()->whereIn('idperingkat',  [4, 5, 6])->first();
+        $sponsor = Member::inRandomOrder()->where('idperingkat', '!=', '0')->first();
         $config = DB::table('tbl_web_config')->first();
         if (!$sponsor) {
             return response()->json(['message' => 'Sponsor not found'], 404);
