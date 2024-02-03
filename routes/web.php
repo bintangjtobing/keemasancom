@@ -35,7 +35,7 @@ Route::get('/sitemap', function () {
         ->add(Url::create('/hubungi-kami'));
     $sitemap->writeToFile(public_path('sitemap.xml'));
 });
-Route::get('/proxy-fetch', function () {
+Route::get('/proxy/fetch', function () {
     try {
         $member = Member::where('mb_status', '1')->inRandomOrder()->first();
 

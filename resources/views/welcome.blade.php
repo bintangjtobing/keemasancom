@@ -121,7 +121,7 @@
         $(document).ready(function() {
             function fetchNotification() {
                 $.ajax({
-                    url: '/proxy-fetch',
+                    url: '/proxy/fetch',
                     type: 'GET',
                     success: function(data) {
                         if (data) {
